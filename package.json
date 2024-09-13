@@ -1,6 +1,7 @@
 {
   "name": "petestate",
   "version": "0.1.0",
+  "allowImportingTsExtensions": true,
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -10,9 +11,14 @@
     "@types/node": "^16.18.105",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.167.1",
+    "chart.js": "^4.4.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.3.0",
+    "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
+    "three": "^0.167.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },

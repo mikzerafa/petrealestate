@@ -1,26 +1,85 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import petHeader from './component/petSite/petHeader';
+import petAdopt from './component/petAdopt';
+import petHome from './component/petHome';
+import petFood from './component/petFood';
+import petGroomer from './component/petGroomer';
+import petHygiene from './component/petHygiene';
+import petLost from './component/petLost';
+import petToys from './component/petToys';
+import dogLogo from '../src/logo/doggo2.svg';
+import '../src/css/App.css';
+import '../src/css/background.css';
+import '../src/css/LostPet.css'
+import burgerMenu from './component/generic/burgerMenu';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PetSitter from './component/petSitter';
+
+let welcomeText = '';
+const HomeText = "let's find you and your pet a home";
+const LostPetText = "let's get your pet back home";
+const elipsesMin = ".";
+const elipses = "...";
+const elipsesStart = "";
+
 
 function App() {
+  const [currentElipses, setCurrentElipses] = useState<string>(".");
+
+  // Function to update the ellipses
+  const nextElipses = (elip: string): string => {
+    if (elip.length >= 3) {
+      elip = elipsesStart;
+    } else {
+      elip += elipsesMin;
+    }
+    return elip;
+  };
+
+  // useEffect to handle the ellipses update over time
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentElipses(prevElipses => nextElipses(prevElipses));
+    }, 500); // Adjust the timing here (500ms in this case)
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, []);
+
+  let currentPage = document.URL;
+  if(currentPage.includes('Lost'))
+  {
+      welcomeText = LostPetText;
+  }else{
+    welcomeText = HomeText;
+  }
+
   return (
+    
+    
     <div className="App">
+      {burgerMenu.BurgerMenu(petHeader.get.petHeader())}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+        <img src={dogLogo} className="App-logo growshrink-image" alt="logo" />
+        <p className="glowing-text">
+          {welcomeText}{currentElipses}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Router>
+          <Routes>
+            <Route path='/Home' element={<petHome.get.HomePage/>} />
+            <Route path='/Adopt' element={<petAdopt.AdoptPage/>} />
+            <Route path='/Food' element={<petFood.get.FoodPage/>} />
+            <Route path='/Groomer' element={<petGroomer.get.GroomerPage/>} />
+            <Route path='/Hygiene' element={<petHygiene.get.HygienePage/>} />
+            <Route path='/Lost' element={<petLost.LostPage/>}/>
+            <Route path='/Sitter' element={<PetSitter.get.SitterPage/>} />
+            <Route path='/Toys' element={<petToys.get.ToysPage/>} />
+
+          </Routes>
+        </Router>
       </header>
     </div>
   );
 }
+
 
 export default App;

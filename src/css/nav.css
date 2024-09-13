@@ -1,0 +1,73 @@
+.NavHome{
+    position: sticky;
+    align-items: center;
+    font-size: 50px;
+    padding-top: 20px;
+    padding-right: 20px;
+
+    padding-bottom: 20px;
+    border-radius: 360px;
+    border-width: 20px;
+    margin: auto;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+
+.NavMenu{  
+    
+    border-radius: 50px;
+    padding: 10px 15px 10px 0px;
+    font-size: 25px;
+    line-height: 40px;
+    border: none;
+    transition: 0.2s;
+    text-align: center;
+    text-decoration: none;
+  
+}
+
+.NavMenu2{
+    border-radius: 50px;
+    padding: 15px 18px;
+    font-size: 25px;
+    line-height: 40px;
+    border: none;
+    transition: 0.2s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+}
+
+.NavMenu:hover, .NavMenu2:hover {
+    color: #e66465;
+}
+
+.NavText{
+   text-decoration: none;
+   color: rgb(55, 55, 55);
+   color: aliceblue;
+   font-size: 3vw;
+}
+
+.NavMenu:hover > .NavText, .NavMenu2:hover > .NavText{
+    color: rgb(122, 255, 171);;
+}
+
+.navMenuListItem{
+    
+    list-style-type: none;
+    color: aliceblue;
+}
+
+.NavMenuList{
+    color: aliceblue;
+    bottom: 5px;
+    background-color: rgba(0f,0f,0f,1f);
+}
+
+.Nav{
+    background-color: #07364fb0;
+}

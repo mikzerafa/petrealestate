@@ -1,0 +1,80 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  
+  
+  .backgroundDiv {
+    width: 100%;
+    height: 100vh;
+    top:0px;
+    position: absolute;
+    background-color: #2C2C2C;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1; /* Ensures the background is behind all content */
+  }
+
+  .animated-image {
+    animation: darkenLighten 3s infinite alternate; /* 4s cycle, loops infinitely */
+  }
+  
+  @keyframes darkenLighten {
+    0% {
+      filter: brightness(100%); /* Normal brightness */
+    }
+    50% {
+      filter: brightness(80%); /* Darken to 50% */
+    }
+    100% {
+      filter: brightness(100%); /* Lighten back to normal */
+    }
+  }
+
+  @keyframes growShrink {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 0px #D1B6F6, 0 0 30px #D1B6F6, 0 0 0px #D1B6F6, 0 0 0px #D1B6F6, 0 0 0px #D1B6F6;
+  }
+  50% {
+      text-shadow: 0 0 5px #fff, 0 0 12px #fff, 0 0 16px #B6E0F6, 0 0 20px #B6E0F6, 0 0 25px #B6E0F6, 0 0 30px #B6E0F6, 0 0 35px #B6E0F6, 0 0 40px #B6E0F6;
+  }
+  100% {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 0px #C5B6F6, 0 0 0px #C5B6F6, 0 0 0px #C5B6F6, 0 0 0px #C5B6F6, 0 0 0px #C5B6F6;
+  }
+}
+
+.glowing-text {
+  font-size: 100%; /* Adjust the font size as needed */
+  color: #fff;
+  animation: glow 3s infinite ease-in-out;
+  text-align: center;
+}
+
+
+/* Apply the animation to the image */
+.growshrink-image {
+    animation: growShrink, App-logo-spin 4s infinite  cubic-bezier(0.9, 0, 0.8, 1);;
+}
+  
