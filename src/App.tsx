@@ -14,26 +14,20 @@ import '../src/css/LostPet.css'
 import burgerMenu from './component/generic/burgerMenu';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PetSitter from './component/petSitter';
+import PetHome from './component/petHome';
 
-let welcomeText = '';
 const HomeText = "let's find you and your pet a home";
 const LostPetText = "let's get your pet back home";
 const elipsesMin = ".";
 const elipses = "...";
 const elipsesStart = "";
 
-
 function App() {
   const [currentElipses, setCurrentElipses] = useState<string>(".");
 
   // Function to update the ellipses
   const nextElipses = (elip: string): string => {
-    if (elip.length >= 3) {
-      elip = elipsesStart;
-    } else {
-      elip += elipsesMin;
-    }
-    return elip;
+    return elip.length >= 3 ? elipsesStart : elip + elipsesMin;
   };
 
   // useEffect to handle the ellipses update over time
@@ -45,17 +39,13 @@ function App() {
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
+  // Calculate Dog or Cat Years to Human Years
+
+
   let currentPage = document.URL;
-  if(currentPage.includes('Lost'))
-  {
-      welcomeText = LostPetText;
-  }else{
-    welcomeText = HomeText;
-  }
+  const welcomeText = currentPage.includes('Lost') ? LostPetText : HomeText;
 
   return (
-    
-    
     <div className="App">
       {burgerMenu.BurgerMenu(petHeader.get.petHeader())}
       <header className="App-header">
@@ -63,23 +53,25 @@ function App() {
         <p className="glowing-text">
           {welcomeText}{currentElipses}
         </p>
+
+      
         <Router>
           <Routes>
-            <Route path='/Home' element={<petHome.get.HomePage/>} />
-            <Route path='/Adopt' element={<petAdopt.AdoptPage/>} />
-            <Route path='/Food' element={<petFood.get.FoodPage/>} />
-            <Route path='/Groomer' element={<petGroomer.get.GroomerPage/>} />
-            <Route path='/Hygiene' element={<petHygiene.get.HygienePage/>} />
-            <Route path='/Lost' element={<petLost.LostPage/>}/>
-            <Route path='/Sitter' element={<PetSitter.get.SitterPage/>} />
-            <Route path='/Toys' element={<petToys.get.ToysPage/>} />
-
+            <Route path='/Home' element={<PetHome />} />
+            <Route path='/Adopt' element={<petAdopt.AdoptPage />} />
+            <Route path='/Food' element={<petFood.get.FoodPage />} />
+            <Route path='/Groomer' element={<petGroomer.get.GroomerPage />} />
+            <Route path='/Hygiene' element={<petHygiene.get.HygienePage />} />
+            <Route path='/Lost' element={<petLost.LostPage />} />
+            <Route path='/Sitter' element={<PetSitter.get.SitterPage />} />
+            <Route path='/Toys' element={<petToys.get.ToysPage />} />
           </Routes>
         </Router>
       </header>
+
+    
     </div>
   );
 }
-
 
 export default App;

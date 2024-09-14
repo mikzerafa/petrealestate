@@ -10,15 +10,21 @@
     border-width: 20px;
     margin: auto;
     text-decoration: none;
+    text-shadow: 1px;
     color: aliceblue;
 }
 
-
+.NavMenu > li{
+    height: 100%;
+    background-color: rgba(3f,3f,3f,0.6f);
+    border: 2px solid #ccc;
+}
 
 .NavMenu{  
-    
+    height: 80% / 8;
     border-radius: 50px;
-    padding: 10px 15px 10px 0px;
+    padding: 10px 15px 10px 10px;
+    margin-bottom: 20px;
     font-size: 25px;
     line-height: 40px;
     border: none;
@@ -49,25 +55,28 @@
    text-decoration: none;
    color: rgb(55, 55, 55);
    color: aliceblue;
-   font-size: 3vw;
+   background-color: rgba(3f,3f,3f,0.6f);
+   font-size: 3vh;
 }
 
 .NavMenu:hover > .NavText, .NavMenu2:hover > .NavText{
-    color: rgb(122, 255, 171);;
+    color: rgb(122, 255, 171);
+    text-decoration: underline;
 }
 
 .navMenuListItem{
-    
     list-style-type: none;
     color: aliceblue;
+    font-weight: bold;
 }
 
 .NavMenuList{
+    height: 100%;
+    width: 100%;
     color: aliceblue;
-    bottom: 5px;
-    background-color: rgba(0f,0f,0f,1f);
-}
+    padding-bottom: 20px;
+    background-color: #9497EB;
+    border: 2px #f6b6ba80 solid;
+    border-radius: 4px;
 
-.Nav{
-    background-color: #07364fb0;
 }

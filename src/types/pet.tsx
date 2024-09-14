@@ -7,5 +7,6 @@ export interface Pet {
     lastSighted?: string;
     missingSince?: string;
     about?:string;
+    age?: number;
   }
   

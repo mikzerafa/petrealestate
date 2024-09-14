@@ -1,53 +1,76 @@
-.pet-card > img{
-    width: 300px;
-    height: 300px;
-    text-align: center;
-}
-
-.pet-card > p{
+.pet-card > p {
+    width: 100%;  /* Make sure the text takes full width */
     text-align: left;
+    margin: 10px 0;
 }
-.pet-card > button{
-    text-align: right;
-}
-
-
-.form-container{
-    width: 100vw;
-}
-
-.form-container > input::placeholder{
-    font: 'arial';
-    color:rgb(1, 19, 35);
-}
-.form-container > input{
-    
-    width: 80%;
-    background-color: rgb(186, 191, 246);
+.pet-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px; /* Adjust card width */
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius:  4px;
     padding: 10px;
-    margin: 10px 5px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px
+    margin: 15px;
+    background-color: #003366;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     
-}
-
-.form-container > button {
-    margin-top: 15px; 
-    margin-bottom: 15px;
-    width: 35vw;
-    height: 10vh;
-    background-color: #B6E0F6;
-    font-size: 20px;
-    border-radius: 4px;
-
-}
-
-.pets-list > h2 {
-    margin-bottom: 10px;
 }
 
 .pet-card > img {
+    width: 100%; /* Make the image fit the card */
+    height: auto;
+    max-height: 300px;
+    object-fit: cover; /* Ensures the image doesn't stretch */
     border-radius: 4px;
+}
+
+.pet-card > h2, .pet-card > p {
+    text-align: left;
+    margin: 10px 0;
+    height: 100%;
+}
+
+.pets-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 500px; /* Limits form width */
+    margin: 0 auto;
+}
+
+.form-container > input::placeholder, .form-container > textarea::placeholder {
+    font-family: Arial, sans-serif;
+    color: rgb(3, 45, 82);
+}
+
+.form-container > input, .form-container > textarea {
+    width: 100%;
+    background-color: rgb(186, 191, 246);
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-container > button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 50px;
+    background-color: #B6E0F6;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container > button:hover {
+    background-color: #A0D0E0; /* Button hover effect */
 }

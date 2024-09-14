@@ -22,13 +22,17 @@ const PetAdopt = () => {
     contactNumber: '',
     image: '',
     missingSince: '',
+    age: 0,
+    about: ''
   });
 
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, files } = e.target;
+
+  const handleChange2 = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const {name, value} = e.target;
+
     console.log('name: ' + name);
     if(itemAddedNames.length == 0)
     {
@@ -45,6 +49,36 @@ const PetAdopt = () => {
       setItemsAddedNames(itemAddedNames.substring(0, itemAddedNames.indexOf(name)) + itemAddedNames.substring(itemAddedNames.indexOf(name) + name.length+1, itemAddedNames.length));
       setItemsAdded(itemsAdded-1)
     }
+
+    setNewPet((prevPet) => ({
+      ...prevPet,
+      about: value,
+    }));
+
+  }
+ 
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, files} = e.target;
+
+    console.log('name: ' + name);
+    if(itemAddedNames.length == 0)
+    {
+      setItemsAddedNames(name)
+      setItemsAdded(itemsAdded + 1);
+    }
+    else if(!itemAddedNames.includes(name) && value.length > 0)
+    {
+      setItemsAddedNames(itemAddedNames + "," + name)
+      setItemsAdded(itemsAdded + 1)
+    }
+    else if(itemAddedNames.includes(name) && value.length == 0)
+    {
+      setItemsAddedNames(itemAddedNames.substring(0, itemAddedNames.indexOf(name)) + itemAddedNames.substring(itemAddedNames.indexOf(name) + name.length+1, itemAddedNames.length));
+      setItemsAdded(itemsAdded-1)
+    }
+
+    
 
     if (name === 'image' && files && files.length > 0) {
       const reader = new FileReader();
@@ -111,6 +145,8 @@ const PetAdopt = () => {
       contactNumber: '',
       image: '',
       missingSince: '',
+      age: 0,
+      about:''
     });
   };
 
@@ -118,7 +154,7 @@ const PetAdopt = () => {
 
   return (
     <div className="App">
-      <h1>Lost Pets</h1>
+      <h1>Adopt Pets</h1>
       <p>{errorM}</p>
       <div className="form-container">
         <input
@@ -132,10 +168,10 @@ const PetAdopt = () => {
      
         <input
           type="text"
-          name="lastSighted"
+          name="age"
           autoComplete="off"
-          placeholder="Location Last Sighted"
-          value={newPet.lastSighted}
+          placeholder="Age"
+          value={newPet.age}
           onChange={handleChange}
         />
         <input
@@ -154,24 +190,26 @@ const PetAdopt = () => {
           onChange={handleChange}
           
         />
-        <input
-          type="text"
-          name="missingSince"
+        <textarea 
+          id="message" 
+          name="about" 
+          rows={4}
+          cols={50} 
+          placeholder="About"
           autoComplete="off"
-          placeholder="Missing Since"
-          value={newPet.missingSince}
-          onChange={handleChange}
+          value={newPet.about}
+          onChange={handleChange2}
         />
         <button onClick={handleAddPet}>Add Pet</button>
       </div>
       <div className="pets-list" style={{}}>
         {pets.map((pet) => (
-          <div key={pet.id} className="pet-card" style={{width: 300, height: 300, margin: '10px auto'}}>
-            <img src={pet.image} alt={pet.name} />
+          <div key={pet.id} className="pet-card" >
+            <img src={pet.image} alt={pet.name} style={{width: 300, height: 300, margin: '10px auto'}} />
             <h2>{pet.name}</h2>
-            <p>Last Sighted: {pet.lastSighted}</p>
+            <p>Pet Age: {pet.age}</p>
             <p>Contact Number: {pet.contactNumber}</p>
-            <p>Missing Since: {pet.missingSince}</p>
+            <p>About: {pet.about}</p>
           </div>
         ))}
       </div>
