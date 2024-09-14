@@ -57,7 +57,7 @@ function App() {
       
         <Router>
           <Routes>
-            <Route path='/Home' element={<PetHome />} />
+            <Route path='/' element={<PetHome />} />
             <Route path='/Adopt' element={<petAdopt.AdoptPage />} />
             <Route path='/Food' element={<petFood.get.FoodPage />} />
             <Route path='/Groomer' element={<petGroomer.get.GroomerPage />} />

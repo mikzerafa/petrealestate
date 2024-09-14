@@ -161,8 +161,8 @@ const PetLost = () => {
       </div>
       <div className="pets-list" style={{}}>
         {pets.map((pet) => (
-          <div key={pet.id} className="pet-card" style={{width: 300, height: 300, margin: '10px auto'}}>
-            <img src={pet.image} alt={pet.name} />
+          <div key={pet.id} className="pet-card" >
+            <img src={pet.image} alt={pet.name} style={{width: 300, height: 300, margin: '10px auto'}}/>
             <h2>{pet.name}</h2>
             <p>Last Sighted: {pet.lastSighted}</p>
             <p>Contact Number: {pet.contactNumber}</p>
