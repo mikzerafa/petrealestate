@@ -60,7 +60,7 @@
 }
 
 .NavMenu:hover > .NavText, .NavMenu2:hover > .NavText{
-    color: rgb(122, 255, 171);
+    color: #FF9933;
     text-decoration: underline;
 }
 

@@ -59,12 +59,12 @@ function App() {
           <Routes>
             <Route path='/' element={<PetHome />} />
             <Route path='/Adopt' element={<petAdopt.AdoptPage />} />
-            <Route path='/Food' element={<petFood.get.FoodPage />} />
+            <Route path='/Food' element={<petFood.get.FoodPage/>} />
             <Route path='/Groomer' element={<petGroomer.get.GroomerPage />} />
             <Route path='/Hygiene' element={<petHygiene.get.HygienePage />} />
             <Route path='/Lost' element={<petLost.LostPage />} />
             <Route path='/Sitter' element={<PetSitter.get.SitterPage />} />
-            <Route path='/Toys' element={<petToys.get.ToysPage />} />
+            <Route path='/Restaurants' element={<petToys.RestaurantList />} />
           </Routes>
         </Router>
       </header>

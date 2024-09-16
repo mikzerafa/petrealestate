@@ -10,7 +10,7 @@ const links = [
     "/Hygiene",
     "/Lost",
     "/Sitter",
-    "/Toys"
+    "/Restaurants"
 
 ]
 

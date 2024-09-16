@@ -1,0 +1,43 @@
+/* LostPet.css or FoodTable.css */
+.foodTablePage {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .foodTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .foodTable th, .foodTable td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .foodTable th {
+    background-color: #2C2C2C;
+  }
+  
+  .foodTable td {
+    background-color: #FF9933
+  }
+
+  .foodTable > tr{
+    border-radius: 4px;
+  }
+  
+  .foodTable tr:nth-child(even) td {
+    background-color: #003366;
+  }
+  
