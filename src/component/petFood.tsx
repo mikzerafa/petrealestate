@@ -14,7 +14,7 @@ const get = {
       
         return (
           <div className="foodTablePage">
-            <h1>Dog Food Safety Guide</h1>
+            <h1>Dog Food Safety Bank</h1>
       
             {/* Search input */}
             <input
@@ -61,6 +61,34 @@ interface FoodItem {
 }
 
 const foodData: FoodItem[] = [
+  { name: "Anise", safeForDogs: false, amount: "None (can cause toxicity)" },
+  { name: "Apple Cider Vinegar", safeForDogs: true, amount: "In small, diluted amounts" },
+  { name: "Apricots", safeForDogs: false, amount: "None (toxic pit)" },
+  { name: "Arugula", safeForDogs: true, amount: "In moderation" },
+  { name: "Basil", safeForDogs: true, amount: "Small amounts, fresh or dried" },
+  { name: "Beans (Kidney)", safeForDogs: false, amount: "None (toxic when raw)" },
+  { name: "Beans (Lentils)", safeForDogs: true, amount: "Cooked, plain" },
+  { name: "Beans (Navy)", safeForDogs: true, amount: "Cooked, plain, small portions" },
+  { name: "Beans (Pinto)", safeForDogs: true, amount: "Cooked, plain" },
+  { name: "Beans (Black)", safeForDogs: true, amount: "Cooked, plain, in moderation" },
+  { name: "Beer", safeForDogs: false, amount: "None (alcohol is toxic)" },
+  { name: "Beets", safeForDogs: true, amount: "Cooked, plain" },
+  { name: "Bell Peppers", safeForDogs: true, amount: "In moderation, chopped" },
+  { name: "Blackberries", safeForDogs: true, amount: "In moderation" },
+  { name: "Black Beans", safeForDogs: true, amount: "Cooked, plain, in moderation" },
+  { name: "Brussels Sprouts", safeForDogs: true, amount: "Cooked, plain" },
+  { name: "Butter Beans", safeForDogs: true, amount: "Cooked, plain, in moderation" },
+  { name: "Cactus (Prickly Pear)", safeForDogs: false, amount: "None (can cause stomach issues)" },
+  { name: "Canned Beans", safeForDogs: true, amount: "In moderation, plain" },
+  { name: "Caraway", safeForDogs: false, amount: "None (can be toxic)" },
+  { name: "Cardamom", safeForDogs: false, amount: "None (potentially harmful)" },
+  { name: "Cauliflower", safeForDogs: true, amount: "Cooked or raw, plain" },
+  { name: "Cayenne Pepper", safeForDogs: false, amount: "None (can cause stomach upset)" },
+  { name: "Chamomile", safeForDogs: false, amount: "None (can cause allergic reactions)" },
+  { name: "Chia Seeds", safeForDogs: true, amount: "Small amounts, soaked or ground" },
+  { name: "Chili", safeForDogs: false, amount: "None (too spicy)" },
+  { name: "Chili Powder", safeForDogs: false, amount: "None (can cause stomach upset)" }, 
+  { name: "Chives", safeForDogs: false, amount: "None (toxic to dogs)" }, { name: "Clams", safeForDogs: true, amount: "Cooked, plain, no shells" }, { name: "Cocoa Powder", safeForDogs: false, amount: "None (toxic to dogs)" }, { name: "Coffee", safeForDogs: false, amount: "None (contains caffeine)" }, { name: "Cornbread", safeForDogs: true, amount: "In moderation, plain" }, { name: "Cottage Cheese", safeForDogs: true, amount: "In moderation, low-fat" }, { name: "Crab", safeForDogs: true, amount: "Cooked, plain, no shell" }, { name: "Cream", safeForDogs: false, amount: "None (high in fat)" }, { name: "Cumin", safeForDogs: true, amount: "In moderation, small amounts" }, { name: "Curry Powder", safeForDogs: false, amount: "None (can cause digestive issues)" }, { name: "Dates", safeForDogs: true, amount: "In moderation, remove pits" }, { name: "Dill", safeForDogs: true, amount: "In moderation, fresh or dried" }, { name: "Duck", safeForDogs: true, amount: "Cooked, plain, no bones" }, { name: "Edamame", safeForDogs: true, amount: "Cooked, plain, in moderation" }, { name: "Eggplant", safeForDogs: true, amount: "Cooked, plain, in moderation" }, { name: "Fennel", safeForDogs: true, amount: "In moderation, cooked or raw" }, { name: "Flaxseeds", safeForDogs: true, amount: "Small amounts, ground or soaked" }, { name: "French Fries", safeForDogs: false, amount: "None (too high in fat and salt)" }, { name: "Ghee", safeForDogs: true, amount: "In moderation (clarified butter)" }, { name: "Goat Cheese", safeForDogs: true, amount: "In moderation, small amounts" }, { name: "Grapefruit", safeForDogs: false, amount: "None (can cause stomach upset)" }, { name: "Green Peas", safeForDogs: true, amount: "Cooked, plain" }, { name: "Halibut", safeForDogs: true, amount: "Cooked, boneless, plain" }, { name: "Hazelnuts", safeForDogs: true, amount: "In moderation, unsalted" }, { name: "Herring", safeForDogs: true, amount: "Cooked, plain, boneless" }, { name: "Hummus", safeForDogs: false, amount: "None (contains garlic and spices)" }, { name: "Jackfruit", safeForDogs: true, amount: "In moderation, cooked, plain" }, { name: "Jalapenos", safeForDogs: false, amount: "None (too spicy)" }, { name: "Jelly", safeForDogs: false, amount: "None (contains sugar or xylitol)" }, { name: "Ketchup", safeForDogs: false, amount: "None (contains sugar and salt)" }, { name: "Kidney Beans (Raw)", safeForDogs: false, amount: "None (toxic when raw)" }, { name: "Lamb", safeForDogs: true, amount: "Cooked, plain, no seasoning" }, { name: "Lasagna", safeForDogs: false, amount: "None (too rich, contains garlic/onion)" }, { name: "Lavender", safeForDogs: true, amount: "Small amounts, dried or fresh" }, { name: "Leeks", safeForDogs: false, amount: "None (toxic to dogs)" }, { name: "Lentils", safeForDogs: true, amount: "Cooked, plain" }, { name: "Lettuce", safeForDogs: true, amount: "In moderation, chopped" }, { name: "Lobster", safeForDogs: true, amount: "Cooked, plain, no shell" }, { name: "Margarine", safeForDogs: false, amount: "None (high in fat)" }, { name: "Maple Syrup", safeForDogs: true, amount: "In moderation, pure only" }, { name: "Marshmallows", safeForDogs: false, amount: "None (contains sugar or xylitol)" }, { name: "Mayonnaise", safeForDogs: false, amount: "None (high in fat)" }, { name: "Melon", safeForDogs: true, amount: "In moderation, no seeds" }, { name: "Mint", safeForDogs: true, amount: "Small amounts, fresh or dried" }, { name: "Mozzarella", safeForDogs: true, amount: "In moderation, low-fat" }, { name: "Mustard", safeForDogs: false, amount: "None (can cause digestive upset)" }, { name: "Nectarines", safeForDogs: true, amount: "In moderation, remove pit" }, { name: "Noodles", safeForDogs: true, amount: "Cooked, plain, in moderation" }, { name: "Nutmeg", safeForDogs: false, amount: "None (toxic to dogs)" }, { name: "Oysters", safeForDogs: true, amount: "Cooked, plain, no shell" }, { name: "Papaya", safeForDogs: true, amount: "In moderation, remove seeds" }, { name: "Parsley", safeForDogs: true, amount: "In moderation, fresh or dried" }, { name: "Parsnips", safeForDogs: true, amount: "Cooked, plain" }, { name: "Peanut Oil", safeForDogs: true, amount: "In moderation, unsalted" }, { name: "Pecans", safeForDogs: false, amount: "None (can cause digestive upset)" }, { name: "Peppermint", safeForDogs: true, amount: "In moderation, fresh or dried" }, { name: "Pickles", safeForDogs: false, amount: "None (too high in salt)" }, { name: "Pine Nuts", safeForDogs: true, amount: "In moderation, unsalted" }, { name: "Plums", safeForDogs: false, amount: "None (toxic pit and skin)" }, { name: "Pork Rinds", safeForDogs: false, amount: "None (too high in fat and salt)" }, { name: "Potato Chips", safeForDogs: false, amount: "None (high in fat and salt)" }, { name: "Radish", safeForDogs: true, amount: "In moderation, chopped" }, { name: "Raspberries", safeForDogs: true, amount: "In moderation" }, { name: "Rhubarb", safeForDogs: false, amount: "None (toxic leaves)" }, { name: "Ricotta Cheese", safeForDogs: true, amount: "In moderation, low-fat" }, { name: "Rosemary", safeForDogs: true, amount: "In moderation, fresh or dried" }, { name: "Saffron", safeForDogs: false, amount: "None (can be toxic)" }, { name: "Sage", safeForDogs: true, amount: "Small amounts, fresh or dried" }, { name: "Sardines", safeForDogs: true, amount: "Cooked, boneless, no seasoning" }, { name: "Sauerkraut", safeForDogs: false, amount: "None (too high in salt)" }, { name: "Sesame Seeds", safeForDogs: true, amount: "In moderation" }, { name: "Shallots", safeForDogs: false, amount: "None (toxic to dogs)" },
   { name: "Apple", safeForDogs: true, amount: "Small slices (remove seeds)" },
   { name: "Grapes", safeForDogs: false, amount: "None (toxic to dogs)" },
   { name: "Carrot", safeForDogs: true, amount: "Moderate (sliced)" },

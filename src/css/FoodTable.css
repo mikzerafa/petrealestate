@@ -7,8 +7,9 @@
   }
   
   .search-input {
-    width: 100%;
-    padding: 10px;
+    width: 90%;
+    padding: 15px;
+    margin-right: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -26,11 +27,11 @@
   }
   
   .foodTable th {
-    background-color: #2C2C2C;
+    background-color: #FF9933;
   }
   
   .foodTable td {
-    background-color: #FF9933
+    background-color: #2C2C2C;
   }
 
   .foodTable > tr{
