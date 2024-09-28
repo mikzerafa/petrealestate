@@ -6,7 +6,7 @@ import petFood from './component/petFood';
 import petGroomer from './component/petGroomer';
 import petHygiene from './component/petHygiene';
 import petLost from './component/petLost';
-import petToys from './component/petToys';
+import petToys from './component/petRestaurant';
 import dogLogo from '../src/logo/doggo2.svg';
 import '../src/css/App.css';
 import '../src/css/background.css';

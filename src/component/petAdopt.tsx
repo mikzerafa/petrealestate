@@ -83,6 +83,7 @@ const PetAdopt = () => {
         }
         resetNewPet();
         setErrorM('');
+        window.location.reload();
       } catch (error) {
         setErrorM('Error adding pet');
         console.error(error);
@@ -167,7 +168,7 @@ const PetAdopt = () => {
         <button onClick={handleAddPet}>Add Pet</button>
       </div>
       <div className="pets-list">
-        {pets ? pets.map(pet => (
+        {pets.length>0 ? pets.map(pet => (
           <div key={pet.id} className="pet-card">
             <img src={pet.image} alt={pet.name} style={{ width: 300, height: 300, margin: '10px auto' }} />
             <h2>{pet.name}</h2>
