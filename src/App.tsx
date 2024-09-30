@@ -4,7 +4,7 @@ import petAdopt from './component/petAdopt';
 import petHome from './component/petHome';
 import petFood from './component/petFood';
 import petGroomer from './component/petGroomer';
-import petHygiene from './component/petHygiene';
+import petBeach from './component/petBeach';
 import petLost from './component/petLost';
 import petToys from './component/petRestaurant';
 import dogLogo from '../src/logo/doggo2.svg';
@@ -15,6 +15,7 @@ import burgerMenu from './component/generic/burgerMenu';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PetSitter from './component/petSitter';
 import PetHome from './component/petHome';
+import BeachPage from './component/petBeach';
 
 const HomeText = "let's find you and your pet a home";
 const LostPetText = "let's get your pet back home";
@@ -61,7 +62,7 @@ function App() {
             <Route path='/Adopt' element={<petAdopt.AdoptPage />} />
             <Route path='/Food' element={<petFood.get.FoodPage/>} />
             <Route path='/Groomer' element={<petGroomer.get.GroomerPage />} />
-            <Route path='/Hygiene' element={<petHygiene.get.HygienePage />} />
+            <Route path='/Beach' element={<BeachPage />} />
             <Route path='/Lost' element={<petLost.LostPage />} />
             <Route path='/Sitter' element={<PetSitter.get.SitterPage />} />
             <Route path='/Restaurants' element={<petToys.RestaurantList />} />

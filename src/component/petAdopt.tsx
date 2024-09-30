@@ -138,7 +138,6 @@ const PetAdopt = () => {
           name="age"
           autoComplete="off"
           placeholder="Age"
-          value={newPet.age}
           onChange={handleChange}
         />
         <input

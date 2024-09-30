@@ -7,7 +7,7 @@ const links = [
     "/Adopt", 
     "/Food",
     "/Groomer",
-    "/Hygiene",
+    "/Beach",
     "/Lost",
     "/Sitter",
     "/Restaurants"

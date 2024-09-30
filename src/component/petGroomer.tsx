@@ -26,7 +26,7 @@ const get = {
     GroomerPage : () => {
       return (
         <div className="container">
-          <h1 className="title">Pet-Friendly Restaurants in Malta</h1>
+          <h1 className="title">Find a groomer for your pooch</h1>
           <ul className="list">
             {petGroomersMalta.map((groomer, index) => (
               <li key={index} className="item">
